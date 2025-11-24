@@ -69,13 +69,10 @@ class CPUSchedulingSimulator:
         case_name = self._extract_case_name(file_path)
         
         if not validate_csv_structure(file_path):
-            raise ValueError(f"{file_path} içinde geçersiz CSV yapısı")
-        
+            raise ValueError(f"{file_path} içinde geçersiz CSV yapısı")        
         processes = parse_csv_file(file_path)
-        print(f"\n{case_name} senaryosundan {len(processes)} süreç yüklendi")
-        
-        return self.run_all_algorithms(processes, case_name)
-    
+        print(f"\n{case_name} senaryosundan {len(processes)} süreç yüklendi")    
+        return self.run_all_algorithms(processes, case_name)    
     def _extract_case_name(self, file_path: str) -> str:
         filename = os.path.basename(file_path)
         case_name = filename.replace('.csv', '').replace('.txt', '')
@@ -92,10 +89,8 @@ class CPUSchedulingSimulator:
             return
         
         processes = parse_csv_file(file_path)
-        print(f"{len(processes)} süreç yüklendi")
-        
-        self.run_all_algorithms(processes, case_name)
-        
+        print(f"{len(processes)} süreç yüklendi")        
+        self.run_all_algorithms(processes, case_name)        
         print(f"\n{case_name} için tüm sonuçlar oluşturuldu")
         print(f"Detaylı raporlar için 'results' klasörünü kontrol edin.")
     
@@ -118,10 +113,8 @@ class CPUSchedulingSimulator:
             
             for file_path in [case1_path, case2_path]:
                 case_name = self._extract_case_name(file_path)
-                results[case_name] = self._process_case(file_path)
-        
-        self._generate_final_summary(results)
-        
+                results[case_name] = self._process_case(file_path)       
+        self._generate_final_summary(results)        
         print("\n" + "="*60)
         print("SİMÜLASYON BAŞARILIYLA TAMAMLANDI!")
         print("="*60)
@@ -132,22 +125,18 @@ class CPUSchedulingSimulator:
         print(f"  Sonuçlar klasörü: {os.path.abspath('results')}")
     
     def _generate_final_summary(self, results: Dict[str, Dict[str, object]]):
-        summary_file = os.path.join("results", "genel_ozet.txt")
-        
+        summary_file = os.path.join("results", "genel_ozet.txt")        
         with open(summary_file, 'w', encoding='utf-8') as f:
             f.write("CPU ZAMANLAMA ALGORİTMALARI - GENEL ÖZET RAPORU\n")
-            f.write("="*80 + "\n\n")
-            
+            f.write("="*80 + "\n\n")            
             for case_name, case_results in results.items():
                 f.write(f"SENARYO: {case_name.upper()}\n")
-                f.write("-"*40 + "\n")
-                
+                f.write("-"*40 + "\n")               
                 metrics_data = {}
                 for algorithm_name, result in case_results.items():
                     metrics = result.calculate_metrics()
                     if metrics:
-                        metrics_data[algorithm_name] = metrics
-                
+                        metrics_data[algorithm_name] = metrics                
                 if metrics_data:
                     f.write("En iyi performans gösteren algoritmalar:\n")
                     
