@@ -5,7 +5,6 @@ import argparse
 import time
 from typing import Dict, List
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
 from src.csv_parser import parse_csv_file, validate_csv_structure
 from src.scheduling_algorithms import SchedulingAlgorithm
 from src.result_generator import ResultGenerator
@@ -16,10 +15,8 @@ class CPUSchedulingSimulator:
         self.result_generator = ResultGenerator()
     
     def run_all_algorithms(self, processes: List, case_name: str) -> Dict[str, object]:
-        print(f"\n{case_name} için tüm zamanlama algoritmaları çalıştırılıyor..")
-        
-        results = {}
-        
+        print(f"\n{case_name} için tüm zamanlama algoritmaları çalıştırılıyor..")        
+        results = {}        
         algorithms = [
             ("FCFS", lambda p: self.scheduler.schedule_fcfs(p)),
             ("Preemptive SJF", lambda p: self.scheduler.schedule_preemptive_sjf(p)),
