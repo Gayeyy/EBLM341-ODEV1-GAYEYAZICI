@@ -1,0 +1,51 @@
+====================================================================================================
+CPU ZAMANLAMA ALGORİTMALARI KARŞILAŞTIRMA RAPORU
+Senaryo: case1
+====================================================================================================
+
+KARŞILAŞTIRMA TABLOSU
+--------------------------------------------------------------------------------------------------------------------------------------------
+Algoritma                 Ort Bek      Max Bek      Ort Tam      Max Tam      CPU Ver%   Bğm Dğş  Thr@100 
+--------------------------------------------------------------------------------------------------------------------------------------------
+FCFS                      813.594      1683.198     824.094      1703.198     99.94      199      13      
+Preemptive SJF            537.016      1863.013     547.516      1883.013     99.95      13       22      
+Non-Preemptive SJF        537.524      1863.189     548.024      1883.189     99.94      199      22      
+Round Robin               1115.985     1906.063     1126.485     1926.063     99.90      1100     9       
+Preemptive Priority       833.632      1689.002     844.132      1707.002     99.95      2        11      
+Non-Preemptive Priority   824.869      1689.198     835.369      1707.198     99.94      199      13      
+
+METRİKLERE GÖRE ALGORİTMA SIRALAMALARI
+========================================
+
+1. Ortalama Bekleme Süresine Göre (düşük daha iyi):
+   1. Preemptive SJF: 537.016
+   2. Non-Preemptive SJF: 537.524
+   3. FCFS: 813.594
+   4. Non-Preemptive Priority: 824.869
+   5. Preemptive Priority: 833.632
+   6. Round Robin: 1115.985
+
+2. Ortalama Tamamlanma Süresine Göre (düşük daha iyi):
+   1. Preemptive SJF: 547.516
+   2. Non-Preemptive SJF: 548.024
+   3. FCFS: 824.094
+   4. Non-Preemptive Priority: 835.369
+   5. Preemptive Priority: 844.132
+   6. Round Robin: 1126.485
+
+3. CPU Verimliliğine Göre (yüksek daha iyi):
+   1. Preemptive Priority: 99.95%
+   2. Preemptive SJF: 99.95%
+   3. FCFS: 99.94%
+   4. Non-Preemptive Priority: 99.94%
+   5. Non-Preemptive SJF: 99.94%
+   6. Round Robin: 99.90%
+
+4. T=100'de Throughput'a Göre (yüksek daha iyi):
+   1. Preemptive SJF: 22
+   2. Non-Preemptive SJF: 22
+   3. FCFS: 13
+   4. Non-Preemptive Priority: 13
+   5. Preemptive Priority: 11
+   6. Round Robin: 9
+
