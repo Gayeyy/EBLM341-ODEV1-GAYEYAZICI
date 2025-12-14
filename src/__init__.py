@@ -1,18 +1,4 @@
-"""
-CPU Zamanlama Simülatörü Paketi
 
-Bu paket, 6 farklı CPU zamanlama algoritmasını uygulayan
-kapsamlı bir simülatör içerir.
-
-Dahil edilen Modüller:
-- process: Süreç veri yapıları ve metrikler
-- csv_parser: CSV dosyası ayrıştırma
-- scheduling_algorithms: Tüm zamanlama algoritmaları
-- result_generator: Rapor oluşturma
-
-Version: 1.0
-Dil: Türkçe
-"""
 
 # Paket versiyonu
 __version__ = "1.0"
