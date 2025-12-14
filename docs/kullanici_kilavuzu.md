@@ -13,13 +13,6 @@ CPU Zamanlama Simülatörü, altı farklı CPU zamanlama algoritmasını uygulay
 5. Preemptive Priority - En yüksek önceliğe sahip süreci dinamik olarak zamanlayan algoritma
 6. Non-Preemptive Priority - Gelen süreçler arasından en yüksek önceliğe sahip süreci seçen algoritma
 
-## Sistem Gereksinimleri
-
-- Python 3.7 veya üzeri
-- İşletim Sistemi: Windows, macOS veya Linux
-- Bellek: Minimum 512MB RAM
-- Disk Alanı: Sonuçlar ve veri dosyaları için 50MB
-
 ## Kurulum
 
 ### Ön Koşullar
@@ -267,14 +260,4 @@ Sorunlar veya sorular için:
 2. Girdi dosyası formatını doğrulayın
 3. Sistem gereksinimlerinin karşılandığından emin olun
 4. Oluşturulan hata mesajlarını dikkatle inceleyin
-
-## Akademik Kullanım
-
-Bu simülatör eğitim amaçlı tasarlanmıştır ve şu konular;
-- Zamanlama algoritması davranış görselleştirmesi
-- Performans analizi ve karşılaştırma çalışmaları
-- Teorik kavramların uygulanması
-- Yazılım mühendisliği en iyi uygulamaları
-
----
 
